@@ -65,3 +65,15 @@ function calculateOrderTotal(order) {
 }
 const orderTotal = calculateOrderTotal(orders[0]);
 console.log(`The total for this order is: $${orderTotal}`);
+
+// Task 5: Create a Function to Mark an Order as Completed
+function completeOrder(customerName) {
+    const orderIndex = orders.findIndex(order => order.customerName === customerName);
+    if (orderIndex !== -1) {
+        orders[orderIndex].status = "Completed";
+        console.log(`Order for ${customerName} is marked as complete`);
+    }
+    else {console.error(`No pending order for: ${customerName}`);}
+}
+// completeOrder("Bob");
+
