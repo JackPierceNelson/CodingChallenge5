@@ -48,3 +48,20 @@ function placeOrder(customerName, orderedItems) {
 placeOrder("Alice", [{
     name: "Latte", quantity: 1}
 ]);
+
+// Task 4: Create a Function to Calculate Total for an Order
+
+function calculateOrderTotal(order) {
+    let total = 0;
+    for (let item of order.items) {const inventoryItem = Inventory.find(product => product.name === item.name);
+        if (inventoryItem) {
+            total += inventoryItem.price * item.quantity;
+        }
+        else {
+            console.warn(`Warning: ${item.name} not found in inventory`);
+        }
+        return total;
+    }
+}
+const orderTotal = calculateOrderTotal(orders[0]);
+console.log(`The total for this order is: $${orderTotal}`);
