@@ -6,3 +6,14 @@ const Inventory = [
     {name: "Cappuccino", price: 4, quantity: 6},
     {name: "Mocha", price: 5, quantity: 4}
 ];
+
+// Task 2 Create an Orders Array of Order Objects
+
+const orders = [];
+
+orders.push(
+    {customerName: "Jack", 
+        items: [{name: "Espresso", quantity: 1}], status: "Pending"},
+    {customerName: "Robert", 
+        items: [{name: "Latte", quantity: 1}], status: "Complete"}
+)
